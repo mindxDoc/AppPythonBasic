@@ -15,21 +15,24 @@ answer3 = "Y"
 score = 0
 
 # Ask the user each question and check the answer
-user_answer = int(input(question1 + " "))
+print(question1)
+user_answer = int(input("Đáp án: "))
 if user_answer == answer1:
     print("Chính xác!")
     score += 1
 else:
     print("Chưa chính xác!")
 
-user_answer = int(input(question2 + " "))
+print(question2)
+user_answer = int(input("Đáp án: "))
 if user_answer == answer2:
     print("Chính xác!")
     score += 1
 else:
     print("Chưa chính xác!")
 
-user_answer = input(question3 + " ")
+print(question3)
+user_answer = input("Đáp án: ")
 if user_answer == answer3:
     print("Chính xác!")
     score += 1
