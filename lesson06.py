@@ -1,7 +1,7 @@
-num = int(input("Nhập kích thước bảng phép nhân bạn muốn: "))
+print("Bảng cửu chương")
 
-for i in range(1, num + 1):
-    for j in range(1, num + 1):
+for i in range(2, 10):
+    for j in range(1, 10):
         result = i * j
-        print(f"{i} * {j} = {result}")
+        print(i, " * ", j, " = ", result)
     print()  # Add a blank line after each row
