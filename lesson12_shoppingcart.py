@@ -1,23 +1,20 @@
-product_list = ["Quần", "Áo", "Rau, củ", "Thịt", "Cá", "Gạo"]
-shopping_cart = []
-
-def display_product_list():
+def print_product_list(product_list):
     print("=========MENU========")
-    for index, item in enumerate(product_list):
-        print(f"{index + 1}. {item}")
+    for i in range(len(product_list)):
+        print(f"{i + 1}. {product_list[i]}")
     print("====================")
 
-def display_shopping_cart():
+def print_shopping_cart(shopping_cart):
     if not shopping_cart:
         print("Giỏ hàng của bạn đang trống.")
     else:
         print("Các mặt hàng trong giỏ hàng của bạn:")
-        for index, item in enumerate(shopping_cart):
-            print(f"{index + 1}. {item}")
+        for i in range(len(shopping_cart)):
+            print(f"{i + 1}. {shopping_cart[i]}")
 
-def add_to_cart():
+def add_to_cart(product_list, shopping_cart):
     print("Danh sách sản phẩm:")
-    display_product_list()
+    print_product_list(product_list)
     item_index = int(input("Nhập chỉ mục của sản phẩm bạn muốn thêm vào giỏ hàng: ")) - 1
     if item_index >= 0 and item_index < len(product_list):
         selected_item = product_list[item_index]
@@ -26,12 +23,12 @@ def add_to_cart():
     else:
         print("Chỉ mục sản phẩm không hợp lệ.")
 
-def remove_from_cart():
+def remove_from_cart(shopping_cart):
     if not shopping_cart:
         print("Giỏ hàng của bạn đang trống.")
     else:
         print("Các mặt hàng trong giỏ hàng của bạn:")
-        display_shopping_cart()
+        print_shopping_cart(shopping_cart)
         item_index = int(input("Nhập chỉ mục của sản phẩm bạn muốn xóa khỏi giỏ hàng: ")) - 1
         if item_index >= 0 and item_index < len(shopping_cart):
             deleted_item = shopping_cart.pop(item_index)
@@ -40,6 +37,9 @@ def remove_from_cart():
             print("Chỉ mục sản phẩm không hợp lệ.")
 
 def main():
+    product_list = ["Quần", "Áo", "Rau, củ", "Thịt", "Cá", "Gạo"]
+    shopping_cart = []
+
     while True:
         print("==========SHOPPING CART==========")
         print("1. Xem danh sách sản phẩm")
@@ -48,14 +48,15 @@ def main():
         print("4. Xóa sản phẩm khỏi giỏ hàng")
         print("5. Thoát")
         choice = input("Nhập lựa chọn của bạn (1-5): ")
+
         if choice == "1":
-            display_product_list()
+            print_product_list(product_list)
         elif choice == "2":
-            display_shopping_cart()
+            print_shopping_cart(shopping_cart)
         elif choice == "3":
-            add_to_cart()
+            add_to_cart(product_list, shopping_cart)
         elif choice == "4":
-            remove_from_cart()
+            remove_from_cart(shopping_cart)
         elif choice == "5":
             break
         else:
